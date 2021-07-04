@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Metal.tres" type="Material" id=1]
+
+[node name="CurvaTunel" type="CSGTorus"]
+outer_radius = 4.0
+sides = 15
+ring_sides = 15
+material = ExtResource( 1 )
+
+[node name="CSGTorus" type="CSGTorus" parent="."]
+operation = 2
+inner_radius = 2.1
+outer_radius = 3.9
+sides = 15
+ring_sides = 15
+material = ExtResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="CSGTorus"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2 )
+width = 8.0
+depth = 4.0
+
+[node name="CSGBox2" type="CSGBox" parent="CSGTorus"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.20474, 2 )
+width = 8.0
+height = 1.5
+depth = 6.0
+
+[node name="Suelo" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.298719, 0 )
+
+[node name="CSGTorus" type="CSGTorus" parent="Suelo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
+inner_radius = 2.1
+outer_radius = 3.9
+sides = 15
+ring_sides = 15
+material = ExtResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="Suelo/CSGTorus"]
+operation = 1
+width = 10.0
+height = 0.1
+depth = 10.0
+material = ExtResource( 1 )
+
+[node name="CSGBox3" type="CSGBox" parent="Suelo"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+operation = 1
+width = 8.0
+height = 1.5
+depth = 4.0

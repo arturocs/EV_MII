@@ -1,0 +1,11 @@
+Model Information:
+* title:	Retro Metal Chair
+* source:	https://sketchfab.com/3d-models/retro-metal-chair-a6d13df81a2f43cab6f52640e7039ec0
+* author:	murad131 (https://sketchfab.com/murad131)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Retro Metal Chair" (https://sketchfab.com/3d-models/retro-metal-chair-a6d13df81a2f43cab6f52640e7039ec0) by murad131 (https://sketchfab.com/murad131) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

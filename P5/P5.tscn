@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Texturas/fondo.webp" type="Texture" id=1]
+[ext_resource path="res://P5.gd" type="Script" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CamaraPivotal.gd" type="Script" id=4]
+[ext_resource path="res://Habitacion.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tunel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://cupula.tscn" type="PackedScene" id=7]
+
+[sub_resource type="PanoramaSky" id=1]
+panorama = ExtResource( 1 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+fog_color = Color( 0.501961, 0.6, 0.701961, 1 )
+dof_blur_far_distance = 0.01
+
+[node name="P5" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Tunel" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157, 2.85 )
+
+[node name="Cupula" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.023, -0.112, -1.619 )
+
+[node name="Habitacion" parent="." instance=ExtResource( 5 )]
+
+[node name="Camara Eje1" type="Spatial" parent="."]
+transform = Transform( 0.906308, 0, 0.422618, 0, 1, 0, -0.422618, 0, 0.906308, -2.1695, 0, -0.0450153 )
+script = ExtResource( 4 )
+
+[node name="Camara Eje2" type="Spatial" parent="Camara Eje1"]
+transform = Transform( 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="Camara Eje1/Camara Eje2"]
+transform = Transform( -1.62921e-07, -5.96046e-08, -1, -3.55271e-14, 1, -5.96046e-08, 1, 2.84217e-14, -1.62921e-07, -9.28193, -1.45386, 0 )
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+
+[node name="Interfaz" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo" type="Panel" parent="Interfaz"]
+margin_right = 221.0
+margin_bottom = 141.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interfaz"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 148.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Interfaz/VBoxContainer"]
+margin_right = 208.0
+margin_bottom = 14.0
+text = "Cambiar de camara: C"
+
+[node name="Label2" type="Label" parent="Interfaz/VBoxContainer"]
+margin_top = 18.0
+margin_right = 208.0
+margin_bottom = 32.0
+text = "Moverse: W, A, S,  D"
+
+[node name="Label3" type="Label" parent="Interfaz/VBoxContainer"]
+margin_top = 36.0
+margin_right = 208.0
+margin_bottom = 50.0
+text = "Espacio: Saltar"
+
+[node name="Label6" type="Label" parent="Interfaz/VBoxContainer"]
+margin_top = 54.0
+margin_right = 208.0
+margin_bottom = 68.0
+text = "Titilar luces del tunel: L"
+
+[node name="Label8" type="Label" parent="Interfaz/VBoxContainer"]
+margin_top = 72.0
+margin_right = 208.0
+margin_bottom = 86.0
+text = "Rotar camara pivotal: Flechas"
+
+[node name="Label9" type="Label" parent="Interfaz/VBoxContainer"]
+margin_top = 90.0
+margin_right = 208.0
+margin_bottom = 121.0
+text = "Click: Coger la silla o interactuar 
+con el ordenador de la cupula"
+
+[connection signal="camara_1" from="." to="Player" method="_on_P5_camara_1"]
+[connection signal="camara_2" from="." to="Camara Eje1" method="_on_P5_camara_2"]
+[connection signal="jugador_ha_entrado" from="Tunel" to="." method="_on_Tunel_jugador_ha_entrado"]
+[connection signal="jugador_ha_salido" from="Tunel" to="." method="_on_Tunel_jugador_ha_salido"]
+[connection signal="jugador_ha_entrado" from="Habitacion" to="." method="_on_Habitacion_jugador_ha_entrado"]
+[connection signal="jugador_ha_salido" from="Habitacion" to="." method="_on_Habitacion_jugador_ha_salido"]

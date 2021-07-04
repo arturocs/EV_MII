@@ -1,0 +1,52 @@
+[gd_scene format=2]
+
+[node name="Silla" type="Spatial"]
+
+[node name="Superficie2" type="CSGCylinder" parent="."]
+transform = Transform( -1.62921e-07, -1, 0, 0.425542, -6.93297e-08, -0.904939, 0.904939, -1.47433e-07, 0.425542, 0, 3.70715, -1.07283 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Superficie2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+radial_segments = 20
+rings = 10
+
+[node name="CSGSphere2" type="CSGSphere" parent="Superficie2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+radial_segments = 20
+rings = 10
+
+[node name="CSGBox" type="CSGBox" parent="Superficie2"]
+transform = Transform( -2.76965e-07, -0.03, 0, 1.7, -4.88762e-09, 0, 0, 0, 1, 0, 0, 0 )
+operation = 1
+
+[node name="CSGBox2" type="CSGBox" parent="Superficie2"]
+transform = Transform( 0.05, 1.06581e-14, -4.20726e-28, -3.55271e-15, 0.15, -5.92119e-15, 0, 8.88178e-16, 1, -0.0321143, 5.23194e-09, 1.47393 )
+depth = 1.32045
+
+[node name="Superficie" type="CSGCylinder" parent="Superficie2"]
+transform = Transform( 0.425542, 9.3591e-08, 0.904939, 9.3591e-08, 1, -1.47433e-07, -0.904939, 1.47433e-07, 0.425542, 0.43134, -7.02741e-08, 2.36497 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Superficie2/Superficie"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
+radial_segments = 20
+rings = 10
+
+[node name="CSGSphere2" type="CSGSphere" parent="Superficie2/Superficie"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+radial_segments = 20
+rings = 10
+
+[node name="CSGBox" type="CSGBox" parent="Superficie2/Superficie"]
+transform = Transform( -2.76965e-07, -0.03, 0, 1.7, -4.88762e-09, 0, 0, 0, 1, 0, 0, 0 )
+operation = 1
+
+[node name="Pata" type="CSGBox" parent="Superficie2"]
+transform = Transform( 0.0820153, 0.0425542, 0.382444, -0.0422618, -6.93297e-09, 0.906308, 0.0385672, -0.0904939, 0.179842, -0.284813, 4.64019e-08, 3.80169 )
+depth = 2.8
+
+[node name="CSGBox3" type="CSGBox" parent="Superficie2/Pata"]
+transform = Transform( 0.422618, 1.12861e-21, 0.906308, -8.36318e-15, 8, -1.42109e-14, -0.0906308, 1.26941e-21, 0.0422618, 0, 8.23406, 0 )
+
+[node name="CSGBox2" type="CSGBox" parent="Superficie2/Pata"]
+transform = Transform( 0.707107, 0, -7.07107, 0, 1, 0, 0.0707107, 0, 0.707107, 0, 0, 0 )
+depth = 2.8

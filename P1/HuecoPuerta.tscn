@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Metal.tres" type="Material" id=1]
+
+[node name="HuecoPuerta" type="CSGCylinder"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.45, -1.649 )
+operation = 2
+radius = 0.9
+sides = 15
+material = ExtResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62921e-07, 1 )
+operation = 2
+depth = 1.0
+material = ExtResource( 1 )

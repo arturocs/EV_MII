@@ -1,0 +1,19 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Texturas/Losetas metalicas/MetalPlates009_1K_Normal.webp" type="Texture" id=1]
+[ext_resource path="res://Texturas/Losetas metalicas/MetalPlates009_1K_Color.webp" type="Texture" id=2]
+[ext_resource path="res://Texturas/Losetas metalicas/MetalPlates009_1K_Metalness.webp" type="Texture" id=3]
+[ext_resource path="res://Texturas/Losetas metalicas/MetalPlates009_1K_Roughness.webp" type="Texture" id=4]
+
+[resource]
+albedo_texture = ExtResource( 2 )
+metallic = 0.26
+metallic_specular = 0.47
+metallic_texture = ExtResource( 3 )
+roughness = 0.29
+roughness_texture = ExtResource( 4 )
+normal_enabled = true
+normal_scale = 1.5
+normal_texture = ExtResource( 1 )
+uv1_scale = Vector3( 4, 4, 4 )
+uv1_triplanar = true

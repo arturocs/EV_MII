@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Metal.tres" type="Material" id=1]
+[ext_resource path="res://HuecoPuerta.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Silla.tscn" type="PackedScene" id=3]
+
+[node name="Habitacion" type="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.891813 )
+width = 5.0
+depth = 5.0
+material = ExtResource( 1 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+operation = 2
+width = 4.9
+height = 1.9
+depth = 4.9
+material = ExtResource( 1 )
+
+[node name="HuecoPuerta" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.45, -2.30956 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.827346, 0 )
+light_color = Color( 0.92549, 0.960784, 0.556863, 1 )
+light_energy = 2.61
+shadow_enabled = true
+omni_range = 4.2
+
+[node name="Silla" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.133104, 0, 0.105751, 0, 0.17, 0, -0.105751, 0, -0.133104, -1.44489, -0.943764, 1.63119 )
+
+[node name="Silla4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.0979062, 0, 0.138976, 0, 0.17, 0, -0.138976, 0, 0.0979062, -1.44489, -0.943764, -1.81429 )
+
+[node name="Silla2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.117942, 0, -0.122432, 0, 0.17, 0, 0.122432, 0, -0.117942, 1.71276, -0.943764, 1.63119 )
+
+[node name="Silla3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.109046, 0, -0.130418, 0, 0.17, 0, 0.130418, 0, 0.109046, 1.71276, -0.943764, -1.84926 )

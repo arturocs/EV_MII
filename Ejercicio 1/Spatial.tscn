@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MeshInstance.gd" type="Script" id=1]
+
+[sub_resource type="ArrayMesh" id=1]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.773962, 0.360423, -0.520652, 0, 0.822214, 0.569179, 0.633232, -0.440523, 0.636362, -2.52232, 3.03457, 3.07821 )

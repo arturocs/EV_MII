@@ -1,0 +1,17 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://Texturas/Metal/Metal010_1K_Roughness.webp" type="Texture" id=1]
+[ext_resource path="res://Texturas/Metal/Metal010_1K_Color.webp" type="Texture" id=2]
+[ext_resource path="res://Texturas/Metal/Metal010_1K_Normal.webp" type="Texture" id=3]
+
+[resource]
+albedo_color = Color( 1, 0.815686, 0.403922, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 1.0
+metallic_specular = 0.0
+roughness = 0.0
+roughness_texture = ExtResource( 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )
+uv1_scale = Vector3( 10, 10, 10 )

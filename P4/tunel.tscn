@@ -1,0 +1,324 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://tunel.escn" type="PackedScene" id=1]
+[ext_resource path="res://Metal.tres" type="Material" id=2]
+[ext_resource path="res://ventana.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Bombilla.tscn" type="PackedScene" id=4]
+
+[node name="tunel" instance=ExtResource( 1 )]
+
+[node name="NurbsPath004" parent="." index="0"]
+material/0 = ExtResource( 2 )
+
+[node name="Ventanas" type="Spatial" parent="." index="1"]
+
+[node name="Par de ventanas11" type="Spatial" parent="Ventanas" index="0"]
+
+[node name="Ventana" type="Spatial" parent="Ventanas/Par de ventanas11" index="0"]
+transform = Transform( 0.579182, 0.805655, 0.124376, -6.66913e-09, 0.152572, -0.988292, -0.815199, 0.572401, 0.0883668, -0.29217, 0.0720056, 3.99003 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas11/Ventana" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1, -2.98023e-08, -7.45058e-09, 0, 1, 7.45058e-09, 7.45058e-09, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas11/Ventana" index="1" instance=ExtResource( 3 )]
+transform = Transform( 1, -2.98023e-08, -7.45058e-09, 0, 1, 7.45058e-09, 7.45058e-09, 0, 1, 0.0504277, 0.115986, 0.0105994 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas11" index="1"]
+transform = Transform( 0.698378, 0.697219, -0.161724, -0.025161, -0.201901, -0.979083, -0.715287, 0.687839, -0.12346, -0.960984, 0.0790664, 3.99593 )
+
+[node name="Interior2" parent="Ventanas/Par de ventanas11/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( 1, 2.98023e-08, -1.49012e-08, 0, 1, -7.45058e-09, 7.45058e-09, 0, 1, 0, 0, 0 )
+
+[node name="Interior3" parent="Ventanas/Par de ventanas11/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.998015, -0.0616716, 0.0127686, 0.0616918, 0.998095, -0.00119247, -0.0126707, 0.00197781, 0.999918, 0.109712, 0.120737, -0.0235792 )
+
+[node name="Par de ventanas14" type="Spatial" parent="Ventanas" index="1"]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -4.90125, 0.176524, -0.012193 )
+
+[node name="Ventana" type="Spatial" parent="Ventanas/Par de ventanas14" index="0"]
+transform = Transform( 0.579182, 0.805655, 0.124376, -6.66913e-09, 0.152572, -0.988292, -0.815199, 0.572401, 0.0883668, -0.29217, 0.0720056, 3.99003 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas14/Ventana" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.995378, 0.0532922, -0.0798867, -0.0697189, 0.973112, -0.219527, 0.0660396, 0.224082, 0.972331, 0.0350835, 0.0643201, -0.0263767 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas14/Ventana" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.997769, -0.0537329, -0.0396338, 0.0364183, 0.935493, -0.351463, 0.0559622, 0.349235, 0.935363, 0.0884171, 0.184557, 0.00321364 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas14" index="1"]
+transform = Transform( 0.698378, 0.697219, -0.161724, -0.025161, -0.201901, -0.979083, -0.715287, 0.687839, -0.12346, -0.960984, 0.0790664, 3.99593 )
+
+[node name="Interior2" parent="Ventanas/Par de ventanas14/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.99957, 0.00702336, -0.0282987, -0.000439137, 0.974077, 0.226205, 0.0291538, -0.226095, 0.973667, 0.0365083, 0.0438271, -0.0328375 )
+
+[node name="Interior3" parent="Ventanas/Par de ventanas14/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.998884, -0.0295621, 0.0366311, 0.0127553, 0.919056, 0.39391, -0.0453107, -0.393005, 0.918417, 0.133995, 0.160258, -0.0650995 )
+
+[node name="Par de ventanas" type="Spatial" parent="Ventanas" index="2"]
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas5" type="Spatial" parent="Ventanas" index="3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02, 0, 0.116 )
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas5" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas5/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas5/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas5" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas5/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas5/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas6" type="Spatial" parent="Ventanas" index="4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02, 0, 1.109 )
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas6" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas6/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas6/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas6" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas6/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas6/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas7" type="Spatial" parent="Ventanas" index="5"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.02, 0, 2.113 )
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas7" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas7/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas7/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas7" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas7/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas7/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas8" type="Spatial" parent="Ventanas" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.011, 0, 3.103 )
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas8" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas8/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas8/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas8" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas8/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas8/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas4" type="Spatial" parent="Ventanas" index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.01568 )
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas4" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas4/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas4/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas4" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas4/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas4/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas3" type="Spatial" parent="Ventanas" index="8"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.99944 )
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas3" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas3/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas3/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas3" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas3/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas3/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas2" type="Spatial" parent="Ventanas" index="9"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 1.005 )
+
+[node name="Ventana1" type="Spatial" parent="Ventanas/Par de ventanas2" index="0"]
+
+[node name="Exterior" parent="Ventanas/Par de ventanas2/Ventana1" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas2/Ventana1" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas2" index="1"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas2/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -4.31689e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -4.37114e-08, 1.91069e-15, 0.301, 0.078, -1.002 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas2/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas9" type="Spatial" parent="Ventanas" index="10"]
+transform = Transform( -0.984808, 0, -0.173648, 0, 1, 0, -0.173648, 0, 0.984808, -0.25695, 0, 4.02272 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas9" index="0"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00232607, 0, -0.0856206 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas9/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -1.49012e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -2.98023e-08, 0, 0.300172, 0.078, -1.0067 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas9/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -1.49012e-08, 0.989255, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.47035e-08, 1.86265e-09, 0.189041, 0.073, -0.986752 )
+
+[node name="Ventana3" type="Spatial" parent="Ventanas/Par de ventanas9" index="1"]
+transform = Transform( 1, 0, 1.49012e-08, 0, 1, 0, -1.49012e-08, 0, 1, 0, 0, 0 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas9/Ventana3" index="0" instance=ExtResource( 3 )]
+transform = Transform( -5.96046e-08, 0.98759, 0.157055, -6.86509e-09, 0.157055, -0.98759, -1, -5.96046e-08, -1.86265e-09, 0.298201, 0.078, -0.986128 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas9/Ventana3" index="1" instance=ExtResource( 3 )]
+transform = Transform( -4.32417e-08, 0.989254, 0.146204, -6.39077e-09, 0.146204, -0.989254, -1, -4.37114e-08, 1.91069e-15, 0.186, 0.073, -1.004 )
+
+[node name="Par de ventanas10" type="Spatial" parent="Ventanas" index="11"]
+transform = Transform( -0.175865, 0.972198, 0.154607, 6.86509e-09, -0.157055, 0.98759, -0.984414, -0.173683, -0.0276205, -5.09263, 0.0734927, 3.10969 )
+
+[node name="Ventana" type="Spatial" parent="Ventanas/Par de ventanas10" index="0"]
+transform = Transform( -0.175865, 5.58794e-09, -0.984414, 0.972198, -0.157055, -0.173683, 0.154607, 0.98759, -0.0276205, 2.16561, 5.50269, 0.800668 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas10/Ventana" index="0" instance=ExtResource( 3 )]
+transform = Transform( -0.175615, 0.962435, 0.207072, -0.00938185, 0.208695, -0.977936, -0.984414, -0.173683, -0.0276205, -4.69594, 0.0782966, 3.10969 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas10/Ventana" index="1" instance=ExtResource( 3 )]
+transform = Transform( -0.282157, 0.947462, 0.150674, -6.86509e-09, 0.157055, -0.98759, -0.959368, -0.278656, -0.0443142, -4.59176, 0.0782966, 3.10969 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas10" index="1"]
+transform = Transform( -0.175865, -5.58794e-09, -0.984414, 0.972198, 0.157055, -0.173683, 0.154607, -0.98759, -0.0276205, 2.2537, 4.99078, 0.880152 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas10/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( -0.175615, 0.962435, 0.207072, -0.00938185, 0.208695, -0.977936, -0.984414, -0.173683, -0.0276205, -4.69594, 0.0832452, 3.10969 )
+
+[node name="Exterior" parent="Ventanas/Par de ventanas10/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( -0.175865, 0.972198, 0.154607, -6.86509e-09, 0.157055, -0.98759, -0.984414, -0.173683, -0.0276205, -4.59176, 0.0854016, 3.10969 )
+
+[node name="Ventana" type="Spatial" parent="Ventanas" index="12"]
+transform = Transform( 0.871044, 0.490535, 0.0256315, -0.106642, 0.239785, -0.964951, -0.479489, 0.837782, 0.261175, -0.992782, 0.0695313, 4.62356 )
+
+[node name="Exterior" parent="Ventanas/Ventana" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.999031, -0.000579029, 0.0440024, 0.00401008, 0.996951, -0.0779255, -0.0438231, 0.0780265, 0.995988, -0.0482981, 0.117906, 0.0245587 )
+
+[node name="Interior" parent="Ventanas/Ventana" index="1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 1.49012e-08, 0, 0, 1, 0, 0, 0 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas" index="13"]
+transform = Transform( 0.899392, -0.390521, -0.196439, -0.106642, 0.239785, -0.964951, 0.423936, 0.888818, 0.174015, -3.93292, 0.0695313, 4.62589 )
+
+[node name="Exterior" parent="Ventanas/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.985142, -0.162204, 0.0564326, 0.163653, 0.986271, -0.0220646, -0.0520792, 0.0309724, 0.998162, -0.0331109, 0.121403, 0.0237495 )
+
+[node name="Interior" parent="Ventanas/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.980608, -0.190686, -0.0452414, 0.189683, 0.981513, -0.025557, 0.0492782, 0.0164798, 0.99865, -0.0727361, -0.00358534, 0.00714767 )
+
+[node name="Par de ventanas12" type="Spatial" parent="Ventanas" index="14"]
+
+[node name="Ventana3" type="Spatial" parent="Ventanas/Par de ventanas12" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.518353 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas12/Ventana3" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.967346, 0.253301, -0.00902657, 0.0191214, -0.108443, -0.993919, -0.252739, 0.96129, -0.109745, -1.99947, 0.0727164, 5.06424 )
+
+[node name="Exterior2" parent="Ventanas/Par de ventanas12/Ventana3" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.962812, 0.269429, -0.0200428, 0.0347446, -0.197047, -0.979778, -0.26793, 0.942646, -0.19908, -1.99947, 0.0727164, 5.17295 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas12" index="1"]
+
+[node name="Interior" parent="Ventanas/Par de ventanas12/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.984808, 0.173648, 0, -0.0257597, 0.146091, -0.988936, -0.171727, 0.973912, 0.148344, -1.99947, 0.0727164, 5.04095 )
+
+[node name="Exterior2" parent="Ventanas/Par de ventanas12/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.984808, 0.173648, 0, -0.0257597, 0.146091, -0.988936, -0.171727, 0.973912, 0.148344, -1.99947, 0.0727164, 5.1595 )
+
+[node name="Par de ventanas13" type="Spatial" parent="Ventanas" index="15"]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -0.015 )
+
+[node name="Ventana3" type="Spatial" parent="Ventanas/Par de ventanas13" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.518353 )
+
+[node name="Interior" parent="Ventanas/Par de ventanas13/Ventana3" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.967346, 0.253301, -0.00902657, 0.0191214, -0.108443, -0.993919, -0.252739, 0.96129, -0.109745, -1.99947, 0.0727164, 5.06424 )
+
+[node name="Exterior2" parent="Ventanas/Par de ventanas13/Ventana3" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.962812, 0.269429, -0.0200428, 0.0347446, -0.197047, -0.979778, -0.26793, 0.942646, -0.19908, -1.99947, 0.0727164, 5.17295 )
+
+[node name="Ventana2" type="Spatial" parent="Ventanas/Par de ventanas13" index="1"]
+
+[node name="Interior" parent="Ventanas/Par de ventanas13/Ventana2" index="0" instance=ExtResource( 3 )]
+transform = Transform( 0.984808, 0.173648, 0, -0.0257597, 0.146091, -0.988936, -0.171727, 0.973912, 0.148344, -1.99947, 0.0727164, 5.04095 )
+
+[node name="Exterior2" parent="Ventanas/Par de ventanas13/Ventana2" index="1" instance=ExtResource( 3 )]
+transform = Transform( 0.984808, 0.173648, 0, -0.0257597, 0.146091, -0.988936, -0.171727, 0.973912, 0.148344, -1.99947, 0.0727164, 5.1595 )
+
+[node name="Bombilla2" parent="." index="2" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.488909, 0.219023, 3.94104 )
+
+[node name="Bombilla3" parent="." index="3" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -4.45959, 0.219023, 3.94104 )
+
+[node name="Bombilla1" parent="." index="4" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.219023, -0.00279453 )
+
+[node name="Bombilla4" parent="." index="5" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.02632, 0.219023, -0.00279453 )

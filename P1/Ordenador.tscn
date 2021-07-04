@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="SpatialMaterial" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.313726, 0.313726, 0.313726, 1 )
+
+[node name="Ordenador" type="CSGBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26951, 0 )
+height = 2.5
+depth = 1.0
+material = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.438855, 0.438206 )
+operation = 2
+width = 1.5
+height = 1.2
+depth = 0.179
+material = SubResource( 1 )

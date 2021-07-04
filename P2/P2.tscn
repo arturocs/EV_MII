@@ -1,0 +1,83 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://tunel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://cupula.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Camara.gd" type="Script" id=3]
+[ext_resource path="res://Habitacion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tapon.gd" type="Script" id=5]
+[ext_resource path="res://Metal.tres" type="Material" id=6]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.21
+bottom_radius = 0.21
+height = 0.1
+radial_segments = 10
+
+[sub_resource type="Animation" id=2]
+resource_name = "Apertura"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1, 1.4 ),
+"transitions": PoolRealArray( 0.784583, 0.732043, 0.707107, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -120, 0, 0 ), Vector3( -70, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Cierre"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.68179, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[node name="P2" type="Spatial"]
+
+[node name="Tunel" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.157, 2.85 )
+
+[node name="Cupula" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.0479612, -0.78034 )
+
+[node name="Habitacion" parent="." instance=ExtResource( 4 )]
+
+[node name="Camara Eje1" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1695, 0, -0.0450153 )
+script = ExtResource( 3 )
+
+[node name="Camara Eje2" type="Spatial" parent="Camara Eje1"]
+transform = Transform( 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="Camara Eje1/Camara Eje2"]
+transform = Transform( -1.62921e-07, -5.96046e-08, -1, -3.55271e-14, 1, -5.96046e-08, 1, 2.84217e-14, -1.62921e-07, -9.28193, -1.45386, 0 )
+current = true
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.49546, 7.11485, 1.04545 )
+omni_range = 17.3908
+
+[node name="Tapon" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01026, 1.38689, -0.566742 )
+script = ExtResource( 5 )
+
+[node name="TaponMesh" type="MeshInstance" parent="Tapon"]
+transform = Transform( 0.94971, 0, -0.313131, 0, 1, 0, 0.313131, 0, 0.94971, -0.00228643, 0.0115333, -0.21232 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tapon"]
+anims/Apertura = SubResource( 2 )
+anims/Cierre = SubResource( 3 )

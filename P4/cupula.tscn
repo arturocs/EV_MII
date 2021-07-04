@@ -1,0 +1,178 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Cristal.tres" type="Material" id=1]
+[ext_resource path="res://cupula.escn" type="PackedScene" id=2]
+[ext_resource path="res://Suelo_metalico.tres" type="Material" id=3]
+[ext_resource path="res://Metal.tres" type="Material" id=4]
+[ext_resource path="res://Tapon.gd" type="Script" id=5]
+[ext_resource path="res://agua.shader" type="Shader" id=6]
+[ext_resource path="res://tripode/scene.gltf" type="PackedScene" id=7]
+[ext_resource path="res://ordenador/scene.gltf" type="PackedScene" id=8]
+[ext_resource path="res://tiburon.gd" type="Script" id=9]
+[ext_resource path="res://tiburon.tscn" type="PackedScene" id=10]
+
+[sub_resource type="CylinderMesh" id=1]
+top_radius = 0.21
+bottom_radius = 0.21
+height = 0.1
+radial_segments = 10
+
+[sub_resource type="Animation" id=2]
+resource_name = "Apertura"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 1, 1.4 ),
+"transitions": PoolRealArray( 0.784583, 0.732043, 0.707107, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( -120, 0, 0 ), Vector3( -70, 0, 0 ), Vector3( -90, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Particles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Cierre"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.68179, 1 ),
+"update": 0,
+"values": [ Vector3( -90, 0, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../Particles:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 0.25
+direction = Vector3( 0, 0, 0 )
+spread = 3.0
+gravity = Vector3( 0, 0, 10 )
+initial_velocity = 5.0
+linear_accel_random = 1.0
+scale_random = 1.0
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 6 )
+
+[sub_resource type="SphereMesh" id=6]
+material = SubResource( 5 )
+radius = 0.05
+height = 0.1
+radial_segments = 10
+rings = 10
+
+[sub_resource type="Animation" id=7]
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, -360, 0 ) ]
+}
+
+[node name="cupula" instance=ExtResource( 2 )]
+
+[node name="Cupula001" parent="." index="0"]
+material/0 = ExtResource( 1 )
+
+[node name="Suelo" parent="." index="1"]
+transform = Transform( 3, 0, 0, 0, 0.001, 0, 0, 0, 3, -0.0136092, 0.159257, 0 )
+material/0 = ExtResource( 3 )
+
+[node name="Tripode" parent="." index="2" instance=ExtResource( 7 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.51684, 0.359162, 0.269123 )
+
+[node name="OmniLight" type="OmniLight" parent="Tripode" index="1"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0.153458, 1.28352, 0 )
+light_energy = 3.0
+light_indirect_energy = 2.0
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 2.0
+
+[node name="Ordenador" parent="." index="3" instance=ExtResource( 8 )]
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.0130465, 0.162465, -2.03183 )
+
+[node name="Tripode2" parent="." index="4" instance=ExtResource( 7 )]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.32986, 0.359162, 0.0935932 )
+
+[node name="OmniLight" type="OmniLight" parent="Tripode2" index="1"]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, 0.15346, 1.28352, 0 )
+light_energy = 3.0
+light_indirect_energy = 2.0
+light_bake_mode = 2
+shadow_enabled = true
+omni_range = 2.0
+
+[node name="Tapon" type="Spatial" parent="." index="5"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.00171781, 2.16782, 0.321537 )
+script = ExtResource( 5 )
+
+[node name="TaponMesh" type="MeshInstance" parent="Tapon" index="0"]
+transform = Transform( 0.94971, 0, -0.313131, 0, 1, 0, 0.313131, 0, 0.94971, -0.0022862, 0.0115333, -0.21232 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tapon" index="1"]
+anims/Apertura = SubResource( 2 )
+anims/Cierre = SubResource( 3 )
+
+[node name="Particles" type="Particles" parent="." index="6"]
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -1.5, 0, 1.5, -6.55671e-08, 0.0193647, 2.03987, 0.011073 )
+emitting = false
+amount = 8000
+lifetime = 0.33
+visibility_aabb = AABB( -0.764306, -0.839353, -4.3079, 1.52861, 1.67871, 6.28083 )
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 6 )
+
+[node name="PuntoRotacionTiburon" type="Spatial" parent="." index="7"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0350118, 1.2394, 0.00822568 )
+
+[node name="Tiburon" parent="PuntoRotacionTiburon" index="0" instance=ExtResource( 10 )]
+transform = Transform( 0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 3.69539 )
+script = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PuntoRotacionTiburon" index="1"]
+autoplay = "Girar"
+playback_speed = 0.6
+anims/Girar = SubResource( 7 )
